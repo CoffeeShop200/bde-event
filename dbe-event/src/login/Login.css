@@ -1,0 +1,142 @@
+.login-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 48px 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 207, 90, 0.2), transparent 30%),
+    linear-gradient(135deg, #f7f2e8 0%, #e7eef3 100%);
+}
+
+.login-card {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(41, 52, 65, 0.14);
+  overflow: hidden;
+}
+
+.login-card .card-body {
+  padding: clamp(28px, 6vw, 48px);
+}
+
+.login-brand {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+  border-radius: 12px;
+  color: #fff;
+  background: #1f4d5d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.login-eyebrow {
+  margin-bottom: 8px;
+  color: #c46b42;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin: 0 0 12px;
+  color: #1f3038;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.login-subtitle {
+  margin-bottom: 32px;
+  color: #64747b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.login-card .form-label {
+  margin-bottom: 8px;
+  color: #31434b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-card .form-control {
+  min-height: 48px;
+  border-color: #d8e0e2;
+  border-radius: 10px;
+  color: #1f3038;
+}
+
+.login-card .form-control:focus {
+  border-color: #1f4d5d;
+  box-shadow: 0 0 0 3px rgba(31, 77, 93, 0.12);
+}
+
+.password-toggle {
+  min-width: 68px;
+  border-color: #d8e0e2;
+  color: #1f4d5d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.password-toggle:hover,
+.password-toggle:focus {
+  border-color: #1f4d5d;
+  color: #fff;
+  background: #1f4d5d;
+}
+
+.login-link {
+  color: #c46b42;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #9e4e2d;
+  text-decoration: underline;
+}
+
+.login-check .form-check-label {
+  color: #64747b;
+  font-size: 13px;
+}
+
+.login-check .form-check-input:checked {
+  border-color: #1f4d5d;
+  background-color: #1f4d5d;
+}
+
+.login-submit {
+  min-height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: #1f4d5d;
+  font-weight: 700;
+}
+
+.login-submit:hover,
+.login-submit:focus {
+  background: #163b48;
+}
+
+.login-footer {
+  margin-top: 28px;
+  color: #64747b;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .login-page {
+    align-items: flex-start;
+    padding: 24px 12px;
+  }
+}
