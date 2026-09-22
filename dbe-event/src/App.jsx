@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar2 from '/src/folder/Navbar2.jsx';
-import Accueil from '/src/Accueil/Accueil.jsx';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import Login from './login/Login.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
   return (
-    <><Navbar2/>
-    <Accueil/></>
+    <> 
+    <Login />
+    </>
   )
   
 }
