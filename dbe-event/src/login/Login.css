@@ -3,9 +3,7 @@
   display: flex;
   align-items: center;
   padding: 48px 0;
-  background:
-    radial-gradient(circle at 10% 10%, rgba(255, 207, 90, 0.2), transparent 30%),
-    linear-gradient(135deg, #f7f2e8 0%, #e7eef3 100%);
+  background: linear-gradient(to right, #ff0000 0%, #ff0000 30%, #000000 60%, #000000 100%);
 }
 
 .login-card {
@@ -20,22 +18,22 @@
 }
 
 .login-brand {
-  width: 44px;
-  height: 44px;
+  width: 40%;
   display: grid;
-  place-items: center;
+  place-items: left;
   margin-bottom: 28px;
   border-radius: 12px;
   color: #fff;
-  background: #1f4d5d;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-top: -10%;
+  margin-bottom: -0%;
 }
 
 .login-eyebrow {
   margin-bottom: 8px;
-  color: #c46b42;
+  color: #c44242;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.6px;
@@ -87,13 +85,13 @@
 
 .password-toggle:hover,
 .password-toggle:focus {
-  border-color: #1f4d5d;
+  border-color: #ff0000;
   color: #fff;
   background: #1f4d5d;
 }
 
 .login-link {
-  color: #c46b42;
+  color: #c44242;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
@@ -105,13 +103,17 @@
 }
 
 .login-check .form-check-label {
-  color: #64747b;
+  color: #000000;
   font-size: 13px;
 }
 
 .login-check .form-check-input:checked {
-  border-color: #1f4d5d;
-  background-color: #1f4d5d;
+  border-color: #000000;
+  background-color: #fa0000;
+}
+.login-check .form-check-input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(31, 77, 93, 0.12);
 }
 
 .login-submit {
@@ -124,7 +126,7 @@
 
 .login-submit:hover,
 .login-submit:focus {
-  background: #163b48;
+  background: #ff0000;
 }
 
 .login-footer {
@@ -139,4 +141,9 @@
     align-items: flex-start;
     padding: 24px 12px;
   }
+}
+
+.login-logo {
+  max-width: 100%;
+  height: auto;
 }

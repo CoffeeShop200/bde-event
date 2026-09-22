@@ -1,8 +1,9 @@
 
 import { useState } from 'react'
-import { Button, Card, Col, Container, Form, InputGroup, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Form, InputGroup, Row,Image } from 'react-bootstrap'
 import './Login.css'
-
+import { Link } from 'react-router-dom'
+import logo from '../assets/skalinata-logo.png'
 function Login() {
   const [showPassword, setShowPassword] = useState(false)
 
@@ -17,16 +18,16 @@ function Login() {
           <Col xs={12} sm={10} md={8} lg={5} xl={4}>
             <Card className="login-card">
               <Card.Body>
-                <div className="login-brand" aria-hidden="true">DB</div>
-                <p className="login-eyebrow">Welcome back</p>
-                <Card.Title as="h1">Sign in to your account</Card.Title>
+    
+                <p className="login-eyebrow">Bon retour</p>
+                <Card.Title as="h1">Connectez-vous à votre compte</Card.Title>
                 <Card.Text className="login-subtitle">
-                  Enter your details to continue to the event dashboard.
+                  Saisissez vos informations pour accéder à votre espace événementiel.
                 </Card.Text>
 
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-3" controlId="loginEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Adresse e-mail</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="you@example.com"
@@ -37,13 +38,13 @@ function Login() {
 
                   <Form.Group className="mb-3" controlId="loginPassword">
                     <div className="d-flex justify-content-between align-items-center">
-                      <Form.Label>Password</Form.Label>
-                      <a className="login-link" href="#forgot-password">Forgot password?</a>
+                      <Form.Label>Mot de passe</Form.Label>
+                      <a className="login-link" href="#forgot-password">Mot de passe oublié ?</a>
                     </div>
                     <InputGroup>
                       <Form.Control
                         type={showPassword ? 'text' : 'password'}
-                        placeholder="Enter your password"
+                        placeholder="Saisissez votre mot de passe"
                         autoComplete="current-password"
                         required
                       />
@@ -52,9 +53,9 @@ function Login() {
                         variant="outline-secondary"
                         type="button"
                         onClick={() => setShowPassword((visible) => !visible)}
-                        aria-label={showPassword ? 'Hide password' : 'Show password'}
+                        aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
                       >
-                        {showPassword ? 'Hide' : 'Show'}
+                        {showPassword ? 'Masquer' : 'Afficher'}
                       </Button>
                     </InputGroup>
                   </Form.Group>
@@ -63,16 +64,16 @@ function Login() {
                     className="login-check mb-4"
                     type="checkbox"
                     id="remember-me"
-                    label="Remember me"
+                    label="Se souvenir de moi"
                   />
 
                   <Button className="login-submit w-100" type="submit">
-                    Sign in
+                    Se connecter
                   </Button>
                 </Form>
 
                 <p className="login-footer">
-                  Don&apos;t have an account? <a className="login-link" href="#create-account">Create one</a>
+                  Vous n&apos;avez pas de compte ? <Link className="login-link" to="/register">Créez-en un</Link>
                 </p>
               </Card.Body>
             </Card>
