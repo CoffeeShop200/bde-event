@@ -7,8 +7,9 @@ import Register from './login/Register.jsx'
 import Calendar from './calendar/calendar.jsx'
 import Acceuil from './Accueil/Accueil.jsx'
 import EventManage from './EventManage/EventManage.jsx'
+import ReservationManage from './ReservationManage/ReservationManage.jsx'
 
-function App() {
+function App(props) {
   const events = {
     3: [{ title: 'Team sync', color: 'blue' }],
     7: [{ title: 'Design review', color: 'orange' }],
@@ -17,30 +18,22 @@ function App() {
     21: [{ title: 'Client dinner', color: 'blue' }],
     24: [{ title: 'Project retro', color: 'orange' }],
   }
-
   return (
     <BrowserRouter>
       <Navbar2 />
-
       <Routes>
-        {/* Page d'accueil */}
         <Route path="/" element={<Acceuil />} />
-
-        {/* Authentification */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        {/* Calendrier */}
-        <Route path="/calendrier" element={<Calendar events={events} />} />
-
-        {/* Gestion des événements */}
-        <Route
-          path="/admin/gereg-event"
-          element={<EventManage />}
-        />
+        <Route path="/calendrier" element={<Calendar />} />
+        <Route path="/admin/gerer-event" element={<EventManage />} />
+        <Route path="/admin/gerer-reservations" element={<ReservationManage />} />
       </Routes>
     </BrowserRouter>
   )
 }
+
+
+
 
 export default App

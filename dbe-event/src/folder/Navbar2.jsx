@@ -80,14 +80,14 @@ function Navbar2() {
               <NavDropdown title="Admin" id="basic-nav-dropdown" className="fw-bold custom-dropdown">
                 <NavDropdown.Item 
                   as={Link} 
-                  to="/admin/gereg-event" 
+                  to="/admin/gerer-event" 
                   className="custom-dropdown-item py-2"
                 >
                   Gérer Événements
                 </NavDropdown.Item>
                 <NavDropdown.Item 
                   as={Link} 
-                  to="/admin/reservations" 
+                  to="/admin/gerer-reservations" 
                   className="custom-dropdown-item py-2"
                 >
                   Gérer Réservations
