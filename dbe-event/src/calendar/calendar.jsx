@@ -12,6 +12,7 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 function Calendar(props) {
   const { events, events2 } = props
 
+
   const [currentDate, setCurrentDate] = useState(new Date(2025, 8, 1))
   const [selectedDate, setSelectedDate] = useState(12)
 
