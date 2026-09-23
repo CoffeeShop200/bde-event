@@ -9,16 +9,10 @@ const monthNames = [
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-export const events = [
-  { day: 3, title: 'Team sync', color: 'blue' },
-  { day: 7, title: 'Design review', color: 'orange' },
-  { day: 12, title: 'Product launch', color: 'red' },
-  { day: 15, title: 'Workshop', color: 'green' },
-  { day: 21, title: 'Client dinner', color: 'blue' },
-  { day: 24, title: 'Project retro', color: 'orange' },
-]
+function Calendar(props) {
+  const { events, events2 } = props
 
-function Calendar() {
+
   const [currentDate, setCurrentDate] = useState(new Date(2025, 8, 1))
   const [selectedDate, setSelectedDate] = useState(12)
 
@@ -33,6 +27,14 @@ function Calendar() {
     if (dayNumber > daysInMonth) return { day: dayNumber - daysInMonth, muted: true }
     return { day: dayNumber, muted: false }
   })
+  const closestEvent = events2.reduce((closest, event) => {
+    const eventDate = new Date(`${event.startDate} ${event.startTime}`)
+    const today = new Date()
+    if (eventDate >= today && (!closest || eventDate < new Date(`${closest.startDate} ${closest.startTime}`))) {
+      return event
+    }
+    return closest
+  }, null)
 
   function changeMonth(offset) {
     setCurrentDate(new Date(year, month + offset, 1))
@@ -82,7 +84,7 @@ function Calendar() {
           <Col lg={4}>
             <Card className="agenda-panel h-100">
               <div className="d-flex align-items-start justify-content-between">
-                <div><h2 className="agenda-heading">Upcoming events</h2><p className="agenda-date">September 12, 2025</p></div>
+                <div><h2 className="agenda-heading">Upcoming events</h2><p className="agenda-date">{closestEvent ? closestEvent.title : 'not found'}</p></div>
                 <Badge bg="light" text="dark">{events.length} events</Badge>
               </div>
               {[['09:00', 'Product stand-up', 'Conference room A'], ['11:30', 'Design review', 'Studio 2'], ['16:00', 'Project retro', 'Online meeting']].map(([time, title, location]) => (
