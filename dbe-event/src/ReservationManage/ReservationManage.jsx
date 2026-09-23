@@ -58,7 +58,7 @@ function ManageReservations() {
       <div className="mb-4">
         <p className="text-danger fw-bold text-uppercase mb-2 tracking-wider">GESTION DES RÉSERVATIONS</p>
         <h1 className="fw-black text-uppercase mb-1">
-          <span className="d-block text-dark">SUIVEZ ET GÉREZ</span>
+          <span className="d-block text-dark">SUIVER ET GÉRER</span>
           <span className="d-block text-dark fs-4">LES INSCRIPTIONS DES PARTICIPANTS À VOS ÉVÉNEMENTS.</span>
         </h1>
       </div>

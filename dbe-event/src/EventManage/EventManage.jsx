@@ -123,7 +123,7 @@ function EventManage() {
           <div className="mb-3 mb-md-0">
             <p className="text-danger fw-bold text-uppercase mb-2 tracking-wider">GESTION DES ÉVÉNEMENTS</p>
             <h1 className="fw-black text-uppercase mb-1">
-              <span className="d-block text-dark">ADMINISTREZ ET ÉDITEZ</span>
+              <span className="d-block text-dark">ADMINISTRER ET ÉDITER</span>
               <span className="d-block text-dark fs-4">VOS CARTES D'ÉVÉNEMENTS.</span>
             </h1>
           </div>
