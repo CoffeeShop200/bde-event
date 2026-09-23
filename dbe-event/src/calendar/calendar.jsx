@@ -9,14 +9,14 @@ const monthNames = [
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-const events = {
-  3: [{ title: 'Team sync', color: 'blue' }],
-  7: [{ title: 'Design review', color: 'orange' }],
-  12: [{ title: 'Product launch', color: 'red' }],
-  15: [{ title: 'Workshop', color: 'green' }],
-  21: [{ title: 'Client dinner', color: 'blue' }],
-  24: [{ title: 'Project retro', color: 'orange' }],
-}
+const events = [
+  { day: 3, title: 'Team sync', color: 'blue' },
+  { day: 7, title: 'Design review', color: 'orange' },
+  { day: 12, title: 'Product launch', color: 'red' },
+  { day: 15, title: 'Workshop', color: 'green' },
+  { day: 21, title: 'Client dinner', color: 'blue' },
+  { day: 24, title: 'Project retro', color: 'orange' },
+]
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 8, 1))
@@ -73,7 +73,7 @@ function Calendar() {
                 {days.map(({ day, muted }, index) => (
                   <div className={`calendar-day ${muted ? 'muted' : ''} ${!muted && day === selectedDate ? 'selected' : ''}`} key={`${day}-${index}`} onClick={() => !muted && setSelectedDate(day)}>
                     <span className="day-number">{day}</span>
-                    {!muted && events[day]?.map((event) => <span className={`event-pill ${event.color}`} key={event.title}>{event.title}</span>)}
+                    {!muted && events.filter((event) => event.day === day).map((event) => <span className={`event-pill ${event.color}`} key={event.title}>{event.title}</span>)}
                   </div>
                 ))}
               </div>
@@ -83,7 +83,7 @@ function Calendar() {
             <Card className="agenda-panel h-100">
               <div className="d-flex align-items-start justify-content-between">
                 <div><h2 className="agenda-heading">Upcoming events</h2><p className="agenda-date">September 12, 2025</p></div>
-                <Badge bg="light" text="dark">3 events</Badge>
+                <Badge bg="light" text="dark">{events.length} events</Badge>
               </div>
               {[['09:00', 'Product stand-up', 'Conference room A'], ['11:30', 'Design review', 'Studio 2'], ['16:00', 'Project retro', 'Online meeting']].map(([time, title, location]) => (
                 <div className="agenda-item" key={title}><span className="agenda-time">{time}</span><div><p className="agenda-event-title">{title}</p><span className="agenda-location">{location}</span></div></div>

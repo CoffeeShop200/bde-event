@@ -2,14 +2,14 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import img from '../assets/g5.jpg'
 
-function Event() {
+function CardEvent(props) {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={img} />
       <Card.Body>
-        <Card.Title>Footsal</Card.Title>
+        <Card.Title>{props.title}</Card.Title>
         <Card.Text>
-          Match de footsal entre les étudiants du campus. Venez nombreux pour encourager votre équipe favorite et passer un bon moment !
+          {props.text}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
@@ -25,4 +25,4 @@ function Event() {
   );
 }
 
-export default Event;
+export default CardEvent;

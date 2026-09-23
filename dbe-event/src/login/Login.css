@@ -120,13 +120,13 @@
   min-height: 48px;
   border: 0;
   border-radius: 10px;
-  background: #1f4d5d;
+  background: #000000 !important;
   font-weight: 700;
 }
 
 .login-submit:hover,
 .login-submit:focus {
-  background: #ff0000;
+  background: #ff0000 !important;
 }
 
 .login-footer {

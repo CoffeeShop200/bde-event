@@ -1,7 +1,9 @@
 import Container from 'react-bootstrap/Container';
+import CardEvent from '../Card/CardEvent';
 
 function Accueil() {
   return (
+    <>
     <div className="bg-light py-5">
       <Container className="py-4">
         <p className="text-danger fw-bold text-uppercase mb-2 tracking-wider" style={{ letterSpacing: '2px', fontSize: '0.9rem' }}>
@@ -18,6 +20,8 @@ function Accueil() {
         </h1>
       </Container>
     </div>
+    <CardEvent title="Match " text="Match de footsal entre les étudiants du campus. Venez nombreux pour encourager votre équipe favorite et passer un bon moment !" />
+    </>
   );
 }
 
