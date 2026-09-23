@@ -8,14 +8,72 @@ import Calendar from './calendar/calendar.jsx'
 import Acceuil from './Accueil/Accueil.jsx'
 
 function App(props) {
-  const events = {
-    3: [{ title: 'Team sync', color: 'blue' }],
-    7: [{ title: 'Design review', color: 'orange' }],
-    12: [{ title: 'Product launch', color: 'red' }],
-    15: [{ title: 'Workshop', color: 'green' }],
-    21: [{ title: 'Client dinner', color: 'blue' }],
-    24: [{ title: 'Project retro', color: 'orange' }],
-  }
+  const events = [
+    { day: 3, title: 'Team sync', color: 'blue' },
+    { day: 7, title: 'Design review', color: 'orange' },
+    { day: 12, title: 'Product launch', color: 'red' },
+    { day: 15, title: 'Workshop', color: 'green' },
+    { day: 21, title: 'Client dinner', color: 'blue' },
+    { day: 24, title: 'Project retro', color: 'orange' },
+  ]
+
+  const events2 = [
+    {img: "img",
+    title: "Team sync",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+    {img: "img",
+    title: "Design review",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+    {img: "img",
+    title: "Product launch",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+    {img: "img",
+    title: "Workshop",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+    {img: "img",
+    title: "Client dinner",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+    {img: "img",
+    title: "Project retro",
+    description: "description de fou",
+    startDate: "25/09/2026",
+    startTime: "14:00",
+    endDate: "25/09/2026",
+    endTime: "15:00",
+    location: "salle A"
+    },
+  ]
+
   return (
     <BrowserRouter>
       <Navbar2 />
@@ -23,7 +81,7 @@ function App(props) {
         <Route path="/" element={<Acceuil />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/calendrier" element={<Calendar />} />
+        <Route path="/calendrier" element={<Calendar events={events} events2={events2} />} />
       </Routes>
     </BrowserRouter>
   )
