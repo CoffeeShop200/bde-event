@@ -9,8 +9,8 @@ import robot from '../assets/robot.jpg';
 
 function Accueil() {
   return (
-    <>
-      <div className="bg-light py-5">
+    <div className="bg-light min-vh-100 pb-5">
+      <div className="py-5">
         <Container className="py-4">
           <p className="text-danger fw-bold text-uppercase mb-2 tracking-wider" style={{ letterSpacing: '2px', fontSize: '0.9rem' }}>
             AGENDA DU CAMPUS
@@ -27,7 +27,7 @@ function Accueil() {
         </Container>
       </div>
 
-      <Container className="py-5">
+      <Container className="pb-5">
         <Row className="g-4">
           <Col xs={12} md={6} lg={4} className="d-flex justify-content-center">
             <CardEvent 
@@ -77,7 +77,7 @@ function Accueil() {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 
