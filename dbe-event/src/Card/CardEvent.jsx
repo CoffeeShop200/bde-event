@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Calendar, Clock, MapPin, Users, ArrowRight } from 'lucide-react';
 
-function CardEvent(props) {
+function CardEvent({ showViewParticipants = false, ...props }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -70,44 +70,43 @@ function CardEvent(props) {
 
         <hr className="my-3 text-muted opacity-25" />
 
-        <div className={`d-flex align-items-center gap-2 ${props.isManagement ? 'mb-0' : 'mb-4'} text-dark fw-bold`} style={{ fontSize: '0.9rem' }}>
+        <div className="d-flex align-items-center gap-2 mb-4 text-dark fw-bold" style={{ fontSize: '0.9rem' }}>
           <Users size={18} />
           <span>{props.participants} participants</span>
         </div>
 
-        {/* Masqué en mode gestion (EventManage) */}
-        {!props.isManagement && (
-          <>
-            <Button 
-              variant="danger" 
-              className="w-100 text-uppercase border-0 d-flex align-items-center justify-content-center gap-2 mb-3 shadow-sm"
-              style={{ 
-                backgroundColor: isHovered ? '#D60000' : '#FF0000', 
-                paddingTop: '15px', 
-                paddingBottom: '15px', 
-                fontSize: '1.05rem',
-                fontWeight: 900,
-                letterSpacing: '1px',
-                transition: 'background-color 0.2s ease'
-              }}
-            >
-              <span>S'INSCRIRE</span>
-              <ArrowRight 
-                size={22} 
-                strokeWidth={3} 
-                style={{
-                  transition: 'transform 0.2s ease',
-                  transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
-                }}
-              />
-            </Button>
+        <Button 
+          variant="danger" 
+          className="w-100 text-uppercase border-0 d-flex align-items-center justify-content-center gap-2 mb-3 shadow-sm"
+          style={{ 
+            backgroundColor: isHovered ? '#D60000' : '#FF0000', 
+            paddingTop: '15px', 
+            paddingBottom: '15px', 
+            fontSize: '1.05rem',
+            fontWeight: 900,
+            letterSpacing: '1px',
+            transition: 'background-color 0.2s ease'
+          }}
+          onClick={props.onSubscribe}
+        >
+          <span>S'INSCRIRE</span>
+          <ArrowRight 
+            size={22} 
+            strokeWidth={3} 
+            style={{
+              transition: 'transform 0.2s ease',
+              transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
+            }}
+          />
+        </Button>
 
-            <div className="text-center">
-              <Card.Link href="#" className="text-dark fw-bold text-decoration-underline small">
-                Voir les inscrits
-              </Card.Link>
-            </div>
-          </>
+        {/* Affiché uniquement si showViewParticipants={true} */}
+        {showViewParticipants && (
+          <div className="text-center">
+            <Card.Link href="#" className="text-dark fw-bold text-decoration-underline small">
+              Voir les inscrits
+            </Card.Link>
+          </div>
         )}
       </Card.Body>
     </Card>
