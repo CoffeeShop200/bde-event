@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import img from '../assets/g5.jpg'
 
 function CardEvent(props) {
-  return (
+  return (  
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={img} />
       <Card.Body>

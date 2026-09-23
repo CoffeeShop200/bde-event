@@ -9,7 +9,7 @@ const monthNames = [
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
-const events = [
+export const events = [
   { day: 3, title: 'Team sync', color: 'blue' },
   { day: 7, title: 'Design review', color: 'orange' },
   { day: 12, title: 'Product launch', color: 'red' },
