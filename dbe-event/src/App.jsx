@@ -6,6 +6,7 @@ import Login from './login/Login.jsx'
 import Register from './login/Register.jsx'
 import Calendar from './calendar/calendar.jsx'
 import Acceuil from './Accueil/Accueil.jsx'
+import EventManage from './EventManage/EventManage.jsx'
 
 function App(props) {
   const events = {
@@ -24,6 +25,7 @@ function App(props) {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/calendrier" element={<Calendar />} />
+        <Route path="/admin/gereg-event" element={<EventManage />} />
       </Routes>
     </BrowserRouter>
   )

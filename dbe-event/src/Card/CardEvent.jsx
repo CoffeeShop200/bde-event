@@ -1,6 +1,6 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import img from '../assets/g5.jpg'
+import React, { useState } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import { Calendar, Clock, MapPin, Users, ArrowRight } from 'lucide-react';
 
 function CardEvent(props) {
   return (  
